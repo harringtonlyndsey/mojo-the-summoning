@@ -1,7 +1,8 @@
-class Attack extends User {}
+const { Sequelize, db, Model, DataTypes } = require("../db/config");
+
+class Attack extends Model {}
 Attack.init(
   {
-    id: DataTypes.INTEGER,
     title: DataTypes.STRING,
     mojoCost: DataTypes.INTEGER,
     staminaCost: DataTypes.INTEGER,
@@ -11,3 +12,7 @@ Attack.init(
     modelName: "attack",
   }
 );
+
+module.exports = {
+  Attack,
+};
