@@ -1,7 +1,9 @@
-class Deck extends User {}
+const { Sequelize, db, Model, DataTypes } = require("../db/config");
+
+class Deck extends Model {}
+
 Deck.init(
   {
-    id: DataTypes.INTEGER,
     name: DataTypes.STRING,
     xp: DataTypes.INTEGER,
   },
@@ -10,3 +12,7 @@ Deck.init(
     modelName: "deck",
   }
 );
+
+module.exports = {
+  Deck,
+};

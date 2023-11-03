@@ -1,7 +1,8 @@
-class Card extends User {}
+const { Sequelize, db, Model, DataTypes } = require("../db/config");
+
+class Card extends Model {}
 Card.init(
   {
-    id: DataTypes.INTEGER,
     name: DataTypes.STRING,
     mojo: DataTypes.INTEGER,
     stamina: DataTypes.INTEGER,
@@ -12,3 +13,7 @@ Card.init(
     modelName: "card",
   }
 );
+
+module.exports = {
+  Card,
+};
